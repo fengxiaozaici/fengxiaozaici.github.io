@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	border: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;/*标准文本*/
+	font-size: 30px;
+	color: #fff;
+}
+div{
+	width: 500px;
+	height: 600px;
+	margin: 30 auto;
+	position: relative;
+	left:30%;
+	top: 70px;
+}
+a{
+	float: left;
+	width: 25px;
+	height: 70px;
+	line-height: 70px;
+	background: #333;
+	opacity: 0.7;/*不透明度*/
+	border-radius:4px ;
+	text-align:center ;
+	display: none;
+	cursor: pointer;
+}
+.left{
+	   position: absolute;
+	   left: 50px;
+	   top: 300px;
+     }
+.right{
+	    position: absolute;
+	    right:-18px;
+	    top:300px;
+     } 
+div:hover a{
+	display: block;
+}
+  ul{
+  	width: 110px;
+  	height: 20px;
+  	background: #333;
+  	opacity: 0.7px;
+  	border-radius:8px;
+  	position: absolute;
+  	right: 30px;
+  	bottom: 20px;
+  	text-align:center;
+  	display: none;
+  }
+  li{
+  	width: 5px;
+  	height: 5px;
+  	border-radius:50%;
+  	background: #ccc;
+  	display: inline-block;
+  	 }
+  	 .da{
+  	 	width: 12px;
+  	 	background: #03BDE4;
+  	 	border-radius: 6px;
+  	 }
+ div:hover ul{
+	display: block;
+}

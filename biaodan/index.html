@@ -1,117 +1,77 @@
-<!--38-楼思宏 今天课程完成表单学习，其中有text  password  radio  checkbox  button  submit  reset  file   等，具体 代码如下
--->
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 		<style type="text/css">
-			*{
-				margin: 0px;
-				padding: 0px;
-                box-sizing: border-box;
-			}
+		*{
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		body{
+			background: deepskyblue;
+		}
+		h3{
+			text-align: center;
+			margin: 10px 0px;
+		}
 			form{
-			    width: 300px;
-			    height: 200px;
-			    background-color: aquamarine;
-			    margin: auto;
-			    position: absolute;
-			    left: 0;
-			    right: 0;
-			    top: 0;
-			    bottom: 0;
-			    text-align: center;
+				width: 400px;
+				height: 260px;
+				background: white;
+				/*border:1px solid;*/
+				position: absolute;
+				margin: auto;
+				right: 0;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				text-align: center;
+				box-shadow: 0px 0px 10px 1px rgba(0,0,0,.5);
+			}
+			input{
+				width: 75%;
+				height: 30px;
+				line-height: 30px;
+				margin: 10px 0px;
+				border: 1px dashed lightblue;
+				text-indent: 1em;
+		         transition: all 0.5s;
+			}
+			input[type="submit"]{
+				width: 40%;
+				height: 40px;
+				border: none;
+				text-indent: 0em;
+				position: absolute;
+				left: 30%;
+				right: 30%;
+				bottom: -30px;
+				background-color: rgba(60,60,100,.95);
+				color: white;
+				cursor: pointer;
+				transition: all 1s;
+			}
+			input:hover{
+				box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,.5);
 			}
 			
-			form div{
-				margin: 20px;
-			}
-			
-			form input[type="submit"]
+			input[type="submit"]:hover
 			{
-				width: 100px;
-				margin-top:10px ;
+				background: black;
+				letter-spacing:10px
 			}
 			
 		</style>
 	</head>
 	<body>
-		<form action="http:\\127.0.0.1/server.php" method="get">
-		    <div>
-		    	<label for="username">用户名</lable>
-		    	<input type="text" name="username" id="username" value="" />
-		    </div>
-		    <div>
-		    	<label for="pwd">密&nbsp;&nbsp;&nbsp;码</lable>
-		    	<input type="password" name="pwd" id="pwd" value="" />
-		    </div>
-		    <div>
-		    	<label for="e_mail">邮&nbsp;&nbsp;&nbsp;箱</lable>
-		    	<input type="email" name="e_mail" id="e_mail" value="" />
-		    </div>
-			<input type="submit" value="注册"/>
-			<div>
-				<label for="nan">性别</lable>
-		    <input type="radio" name="nan" checked="checked"/>男
-		    <input type="radio" name="nan" />女
-			</div>
-			 </div>
-			运动
-			<input type="checkbox"/>篮球
-			<input type="checkbox"/>足球
-			<input type="checkbox"/>乒乓球
-			<input type="checkbox"/>橄榄球
-			<input type="checkbox"/>各种
-			<div>
-		    <div>
-		    	<input type="button" value="提交"/>
-		    </div>
-		    <div>
-		    	<input type="file" name="name" id="name" value="hao" />
-		    </div>
-		    <div>
-		    	<input type="reset" value="重置" name="23" />
-		    </div>
-		    <div>
-		    	<input type="hidden" name="hidden" id="hidden" value="" />
-		    </div>
-		    <div>
-		    	<input type="image" name="tupand" id="tupand" value="提交" src="img/201995-120HG1030762.jpg" />
-		    </div>
-		     <div>
-		     	url 类型
-		    	<input type="url" name="r" id="r" value="请输入URL地址" />
-		    </div>
-		    
-		     <div>
-		     	tel 类型
-		    	<input type="tel" name="rr" id="rr" value="请输入您的电话号码" />
-		    </div>
-		    <div>
-		    	search类型
-		    	<input type="search" name="se" id="se" value="" />
-		    	<input type="button" value="搜索" name="se"/>
-		    </div>
-		    <div>
-		    	color
-		    	<input type="color" name="col" id="col" value="" />
-		    </div>
-		    <div>
-		    	number
-		    	<input type="number" name="num" id="num" value="" />
-		    </div>
-		    <div>
-		    	range
-		    	<input type="range" name="ran" id="ran" value="" />
-		    </div>
-		    <div >
-		    	Date pickers
-		    	<input type="date,month,week" name="datee" id="" value="" />
-		    	
-		    </div>
+		<form action="#" method="post">
+			<h3>个人信息</h3>
+			<input type="text" id="name" placeholder="请输入您的姓名"/>
+			<input type="text" id="age" placeholder="请输入您的年龄"/>
+			<input type="text" id="mail" placeholder="请输入您的邮箱"/>
+			<input type="submit" value="提交信息"/>
 		</form>
-		
 	</body>
 </html>

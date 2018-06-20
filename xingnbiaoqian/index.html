@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		body{
+			background: url(img/bg.jpg) no-repeat;
+		}
+		h6{
+			text-align: center;
+			margin: 10px 0px;
+			color: deepskyblue;
+		}
+			form{
+				width: 300px;
+				height: 400px;
+				background: white;
+				/*border:1px solid;*/
+				position: absolute;
+				margin: auto;
+				right: 0;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				padding: 50px;
+				
+				box-shadow: 0px 0px 10px 1px rgba(0,0,0,.5);
+			}
+			input{
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				margin: 10px 0px;
+				border: 1px solid gray;
+				text-indent: 1em;
+		         transition: all 0.5s;
+		         border-radius: 5px;
+			}
+			input[type="submit"]{
+				width: 300px;
+				height: 40px;
+				border: none;
+				text-indent: 0em;
+				position: absolute;
+				margin: auto;
+				right: 0;
+				left: 0;
+				margin-top: 25px;
+				background-color:cornflowerblue ;
+				color: black;
+				cursor: pointer;
+				transition: all 1s;
+				
+			}
+			input:hover{
+				box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,.5);
+			}
+			
+			input[type="submit"]:hover
+			{
+				background: black;
+				color: white;
+				letter-spacing:10px
+			}
+			.a{
+				width: 60px;
+				margin: 0px auto;
+				
+			}
+			.b{
+				text-align: center;
+				margin-top: 90px;
+				font-size: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="">
+			<form action="#" method="post">
+				<div class="a">
+					<img src="img/logo-main.png" />
+				</div>
+					
+				
+			<h6>Hello，欢迎使用后台管理系统！</h6>
+			<p>用户名</p>
+			<input type="text" id="name"/>
+			<p>密码</p>
+			<input type="text" id="mima" />
+			
+			<input type="submit" value="登 陆"/>
+			<div class="b"><p>忘记密码？<a href="#">点击找回</a>|没有账号？<a href="#">点击注册</a></p></div>
+			
+		</form>
+		</div>
+		
+	</body>
+</html>

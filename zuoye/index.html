@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>体检信息</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="layui/css/layui.css?t=1551352891272" media="all">
+		<link rel="stylesheet" href="layui/css/modules/laydate/default/laydate.css">
+		<link rel="stylesheet" href="layui/css/modules/layer/default/layer.css" />
+		<style type="text/css">
+			.layui-nav .layui-nav-item a.layui-top-icon {
+				color: rgba(0, 0, 0, .7);
+			}
+			
+			.layui-layout-right {
+				position: absolute!important;
+				right: 0;
+				top: 0
+			}
+			
+			.layui-bg-white {
+				background-color: #fff!important;
+			}
+			
+			.layui-header {
+				left: 200px;
+			}
+			
+			.layui-logo {
+				background-color: black;
+				width: 200px;
+			}
+			
+			#title {
+				color: white;
+			}
+			.layui-layout-left{
+				left: 0px;
+			}
+			.layui-layout-right{
+				right: 200px;
+			}
+			.layui-logo{
+				width: 500px;
+			}
+			body{
+				background-color: #EEEEEE;
+			}
+			.layui-form-item{
+				width: 98%;
+				padding: 10px;
+				background-color: white;
+			 margin-top:30px;
+			}
+			.layui-content-white{
+				width: 98%;
+				background-color: white;
+				margin-top:30px;
+			}
+		</style>
+	</head>
+
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+
+			<div class="layui-header layui-bg-white" id="menu-header">
+				<ul class="layui-nav layui-layout-left">
+					<li class="layui-nav-item" onclick="expandOrcontract()">
+						<a class="layui-top-icon" href="javascript:;" layadmin-event="flexible" title="侧边伸缩">
+							<i class="layui-icon layui-icon-shrink-right"></i>
+						</a>
+					</li>
+					<li class="layui-nav-item" onclick="window.location.reload()">
+						<a class="layui-top-icon" href="javascript:;" layadmin-event="refresh" title="刷新">
+							<i class="layui-icon layui-icon-refresh-3"></i>
+						</a>
+					</li>
+					<span class="layui-nav-bar" style="width: 0px; left: 66px; opacity: 0; top: 48.4px;"></span></ul>
+				<ul class="layui-nav layui-layout-right layui-header-right">
+					<li class="layui-nav-item">
+						<a class="layui-top-icon" href="javascript:;" layadmin-event="fullscreen">
+							<i class="layui-icon layui-icon-screen-restore">
+			</i>
+						</a>
+					</li>
+					<li class="layui-nav-item">
+						<a class="layui-top-icon" href="javascript:;">
+							贤心
+							<span class="layui-nav-more"></span></a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="">基本资料</a>
+							</dd>
+							<dd>
+								<a href="">安全设置</a>
+							</dd>
+							<dd>
+								<a href="">退出</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item layui-hide-xs">
+						<a class="layui-top-icon" href="javascript:;" layadmin-event="about">
+							<i class="layui-icon layui-icon-more-vertical">
+			</i>
+						</a>
+					</li>
+					<span class="layui-nav-bar"></span>
+				</ul>
+			</div>
+			<div class="layui-logo">
+				<img id="titleImg" src="img/logo.png" style="width: 14px;height: 14px;display: none;">
+				<span id="title">后台布局</span>
+			</div>
+			<div class="layui-side layui-bg-black" id="menu-left">
+
+				<div class="layui-side-scroll">
+					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+					<ul class="layui-nav layui-nav-tree" lay-filter="test">
+						<li class="layui-nav-item layui-nav-itemed">
+							<a href="javascript:;" lay-tips="基本信息" lay-direction="1">
+								<i class="layui-icon layui-icon-home"></i>
+								<cite>基本信息</cite>
+								<span class="layui-nav-more"></span>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本信息</a>
+								</dd>
+							</dl>
+							<li class="layui-nav-item layui-nav-itemed">
+								<a href="javascript:;" lay-tips="体检信息" lay-direction="2">
+									<i class="layui-icon layui-icon-home"></i>
+									<cite>体检信息</cite>
+									<span class="layui-nav-more"></span></a>
+								<dl class="layui-nav-child">
+									<dd>
+										<a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体检信息</a>
+									</dd>
+								</dl>
+							</li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="layui-body" style="left: 220px;">
+				<div class="layui-row layui-col-space15">
+					<div class="layui-col-md12 layui-content-white">
+						<form class="layui-form" onsubmit="return false;">
+							<div class="layui-form-item">
+								<div class="layui-inline">
+									<label class="layui-form-label">姓名</label>
+									<div class="layui-input-inline">
+										<input type="text" name="name" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+									</div>
+								</div>
+								<div class="layui-inline">
+									<label class="layui-form-label">身份证号码</label>
+									<div class="layui-input-inline">
+										<input type="text" name="idcardNo" placeholder="请输入身份证号码" autocomplete="off" class="layui-input">
+									</div>
+								</div>
+								<div class="layui-inline">
+									<label class="layui-form-label">状态</label>
+									<div class="layui-input-block">
+										<input type="text" name="HandoverCompany" id="HandoverCompany" class="layui-input" style="position:absolute;z-index:0;width:100%;" lay-verify="required" value="111" onkeyup="search()" autocomplete="off">
+										<select type="text" id="hc_select" lay-filter="hc_select" autocomplete="off" placeholder="移交单位全称" lay-verify="required" class="layui-select" lay-search>
+											<option value="111">请选择</option>
+											<option value="222">已报名</option>
+											<option value="333">已缴费</option>
+											<option value="444">已上传</option>
+											<option value="555">审核中</option>
+											<option value="666">实力不及格</option>
+											<option value="777">体检合格</option>
+											<option value="888">体检不合格</option>
+										</select>
+									</div>
+								</div>
+								<div class="layui-inline">
+									<label class="layui-form-label">缴费时间</label>
+									<div class="layui-input-inline">
+										<input type="text" class="layui-input" id="paymentDt" name="paymentDt" placeholder="开始时间 ~ 结束时间" lay-key="1">
+									</div>
+								</div>
+								</br>
+								<button class="layui-btn layui-right" lay-submit="" lay-filter="formDemo">搜索</button>
+							<button type="reset" class="layui-btn layui-btn-danger">重置</button>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+
+				<div class="layui-col-md12 layui-content-white">
+					<table class="layui-hide" id="tableList" lay-filter="tableList"></table>
+				</div>
+
+			</div>
+			<div class="layui-footer">
+				<!-- 底部固定区域 -->
+				© cm.xxxx.com - 医院管理子系统底部区域
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+		<script src="layui/layui.js?t=1551352891272"></script>
+		<script type="text/html" id="barDemo">
+			<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="shen">审核</a>
+		</script>
+		<script>
+			layui.use('element', function() {
+				var element = layui.element;
+
+			});
+			layui.use(['form', 'layedit', 'upload'], function() {
+				var form = layui.form;
+				form.on('select(hc_select)', function(data) {
+					$("#HandoverCompany").val(data.value);
+					$("#hc_select").next().find("dl").css({
+						"display": "none"
+					});
+					form.render();
+				});
+				window.search = function() {
+					var value = $("#HandoverCompany").val();
+					$("#hc_select").val(value);
+					form.render();
+					$("#hc_select").next().find("dl").css({
+						"display": "block"
+					});
+					var dl = $("#hc_select").next().find("dl").children();
+					var j = -1;
+					for(var i = 0; i < dl.length; i++) {
+						if(dl[i].innerHTML.indexOf(value) <= -1) {
+							dl[i].style.display = "none";
+							j++;
+						}
+						if(j == dl.length - 1) {
+							$("#hc_select").next().find("dl").css({
+								"display": "none"
+							});
+						}
+					}
+				}
+			});
+layui.use('laydate', function(){
+	var laydate = layui.laydate;
+  	//日期时间选择器
+  	//日期范围
+  	laydate.render({
+    	elem: '#paymentDt',
+    	range: true,
+    	range: '~'
+  	});
+});
+			layui.use(['laydate', 'laypage', 'layer', 'table', 'upload', 'element'], function() {
+				var laydate = layui.laydate, //日期			
+					laypage = layui.laypage, //分页						
+					table = layui.table, //表格
+					upload = layui.upload, //上传
+					element = layui.element //元素操作		
+			
+				table.render({
+					elem: '#tableList',
+					url: 'http://47.111.23.192:82/hmBack/adminApi/examination/getExaminationListById', 
+				    where: {id: 1},
+					page: true, //开启分页,	
+					parseData: function(res){ //res 即为原始返回的数据
+                      return {
+                   "code": res.code, //解析接口状态
+                   "msg": res.success, //解析提示文本
+                   "count": res.counts, //解析数据长度
+                   "data": res.examinationList//解析数据列表
+                      };
+                   },
+					cols: [
+						[ //表头
+							{
+								field: 'dicStatus',
+								title: '状态',
+								sort: true,
+								width: 100,
+								align: 'center'
+							},
+							{
+								field: 'name',
+								title: '姓名',
+								sort: false,
+								width: 100,
+								align: 'center'
+							},
+							{
+								field: 'sex',
+								title: '性别',
+								sort: false,
+								width: 75,
+								align: 'center'
+							},
+							{
+								field: 'birthday',
+								title: '出生日期',
+								sort: false,
+								width: 130,
+								align: 'center',
+								templet: '#BIRTHDAY'
+							},
+							{
+								field: 'telephone',
+								title: '手机号码',
+								sort: false,
+								width: 130,
+								align: 'center'
+							},
+							{
+								field: 'insert_dt',
+								title: '报名时间',
+								sort: false,
+								width: 165,
+								align: 'center'
+							},
+							{
+								field: 'payment_dt',
+								title: '缴费时间',
+								sort: false,
+								width: 165,
+								align: 'center'
+							},
+							{
+								field: 'upload_dt',
+								title: '上传时间',
+								sort: false,
+								width: 165,
+								align: 'center'
+							},
+							{
+								field: 'check_dt',
+								title: '审核时间',
+								sort: false,
+								width: 165,
+								align: 'center'
+							},
+							{
+								fixed: 'right',
+								align: 'center',
+								title: '操作',
+								width: 100,
+								toolbar: '#barDemo'
+							},
+						]
+					]
+				});
+
+				//监听行工具事件
+				table.on('tool(test)', function(obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+					var data = obj.data, //获得当前行数据
+						layEvent = obj.event; //获得 lay-event 对应的值
+					if(layEvent === 'sd') {
+						layer.msg('查看操作');
+					} else if(layEvent === 'shen') {
+						layer.confirm('确认审核赵炜炜吗？', function(index) {
+							layer.msg(index);
+							//向服务端发送删除指令
+						});
+					} else if(layEvent === 'edit') {
+						layer.msg('编辑操作');
+					}
+				});
+				//分页
+				laypage.render({
+					elem: 'pageDemo' //分页容器的id
+						,
+					count: 100 //总页数
+						,
+					skin: '#1E9FFF' //自定义选中色值
+						//,skip: true //开启跳页
+						,
+					jump: function(obj, first) {
+						if(!first) {
+							layer.msg('第' + obj.curr + '页', {
+								offset: 'b'
+							});
+						}
+					}
+				});
+			});
+function expandOrcontract(){
+	if($("#menu-left").css("width") == "60px"){
+		expandLayout();
+	}else{
+		contractLayout();
+	}
+}
+
+//展开
+function expandLayout(){
+	$("#menu-left").animate({width:'200px'});
+	$(".layui-logo").animate({width:'200px'});
+	$(".layui-side-scroll .layui-nav-item cite").animate({opacity:"1"});
+	$(".layui-side-scroll .layui-nav-itemed .layui-nav-child").slideDown();
+	$("#menu-header").animate({left:'200px'});
+	$(".layui-header-right").animate({right:'180px'});
+	$(".layui-body").animate({left:'200px'});
+	
+	$("#titleImg").hide();
+	$("#title").show();
+}
+function contractLayout(){
+	$("#menu-left").animate({width:'60px'});
+	$(".layui-logo").animate({width:'60px'});
+	$(".layui-side-scroll .layui-nav-item cite").animate({opacity:"0"});
+	$(".layui-side-scroll .layui-nav-itemed .layui-nav-child").slideUp();
+	$("#menu-header").animate({left:'60px'});
+	$(".layui-header-right").animate({right:'0'});
+	$(".layui-body").animate({left:'60px'});
+	$("#title").hide();
+	$("#titleImg").show();
+}
+
+//搜索
+
+
+
+		</script>
+
+	</body>
+
+</html>	
